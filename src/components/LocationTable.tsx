@@ -1,10 +1,13 @@
 import React, {FC} from "react";
+import { WeatherLocation } from "../model/Weather";
 
 interface LocationTableProps {
-  locations: string[];
+  locations: WeatherLocation[];
+  current: WeatherLocation | null;
+  onSelect: (location: WeatherLocation) => void;
 }
 
-export const LocationTable: FC<LocationTableProps> = ({locations}) =>
+export const LocationTable: FC<LocationTableProps> = ({locations, current, onSelect}) =>
   <div>
     <h2>Locations</h2>
     <table className="table table-hover">
@@ -15,7 +18,10 @@ export const LocationTable: FC<LocationTableProps> = ({locations}) =>
       </thead>
       <tbody>
       {locations.map((location, index) =>
-        <tr key={index}><td>{location}</td></tr>
+        <tr key={location.id} className={current?.id === location.id ? 'table-primary' : ''}
+            onClick={() => onSelect(location)}>
+          <td>{location.name}</td>
+        </tr>
       )}
       </tbody>
     </table>
