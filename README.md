@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Test React Project following the react tutorial https://medium.com/swlh/react-tutorial-build-a-weather-app-from-scratch-part-1-e2f65cd3d112
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
